@@ -1,0 +1,164 @@
+/* ===== Cơ bản ===== */
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul li {
+  padding: 10px 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+}
+
+ul li:hover {
+  background-color: #dce5ee;
+  transform: translateY(-3px);
+}
+
+/* ===== Tiêu đề ===== */
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 40px;
+  animation: fadeInDown 1s ease;
+  color: #2c3e50;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 40px;
+  justify-content: center; /* căn giữa */
+  animation: fadeInUp 1s ease;
+}
+
+.product-item {
+  flex: 1 1 240px; /* tối thiểu 240px, có thể co giãn */
+  max-width: 280px; /* giới hạn max */
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 480px;
+  overflow: hidden;
+}
+
+
+/* Hình ảnh */
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  transition: transform 0.4s ease;
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Tên sản phẩm */
+.product-item h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 14px 0 8px;
+  min-height: 48px;
+}
+
+/* Mô tả */
+.product-item .description {
+  color: #555;
+  font-size: 14px;
+  margin: 4px 0 10px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* Giá */
+.product-item p.price {
+  color: #e91e63;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* Nút hành động */
+.product-item .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.product-item button {
+  padding: 10px 16px;
+  background-color: #2196f3; /* cateblue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item button:hover {
+  background-color: #1976d2;
+  transform: scale(1.06);
+}
+
+.product-item button a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

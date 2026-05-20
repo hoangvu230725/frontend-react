@@ -1,0 +1,111 @@
+.product-detail-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.product-main {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.product-image {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: #007bff;
+}
+
+.product-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #28a745;
+}
+
+.buy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sản phẩm gợi ý */
+.related-products-section {
+  margin-top: 20px;
+}
+
+.related-products-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.related-products-list {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.related-product-item {
+  width: 180px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.related-product-item:hover {
+  transform: translateY(-5px);
+}
+
+.related-product-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 8px;
+}
+
+.related-product-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.related-product-price {
+  color: #28a745;
+  font-weight: 700;
+}
+a{
+    list-style: none;
+    color: white;
+}

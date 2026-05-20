@@ -1,0 +1,289 @@
+/* Hiệu ứng xuất hiện khi scroll */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tổng thể */
+.banner-container {
+  padding: 30px;
+  background: #f9f9f9;
+  animation: fadeUp 1s ease-in-out;
+}
+
+/* Tiêu đề chính */
+.name-store {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeUp 1s ease-in-out;
+}
+
+.name-store h1 {
+  font-size: 48px;
+  color:cadetblue;
+  text-transform: uppercase;
+  transform: rotateX(0deg);
+  animation: popIn 1s ease-in-out;
+}
+
+.name-store p {
+  font-size: 20px;
+  color: #666;
+}
+
+/* Hiệu ứng popIn cho h1 */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0);
+  }
+}
+
+/* Banner image */
+.banner-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+
+.banner-image:hover {
+  transform: scale(1.05) rotateY(5deg);
+}
+
+/* Giới thiệu */
+.why-us, .policy, .testimonials, .quick-contact {
+  margin-top: 50px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 1s ease;
+  
+}
+.why-us ul {
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: center;
+}
+.why-us ul li {
+  display: inline-block;  /* Cho li nằm ngang */
+  margin: 0 10px;         /* Khoảng cách giữa các mục */
+}
+
+.about-us{
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/* Sản phẩm mới */
+.new-products h2,
+.about-us h2,
+.why-us h2,
+.policy h2,
+.testimonials h2,
+.quick-contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Thẻ sản phẩm */
+.product-card {
+  width: 180px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeUp 1s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.05) rotateZ(1deg);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.product-card img:hover {
+  transform: scale(1.1);
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.product-card button:hover {
+  background: #c2185b;
+  transform: scale(1.05);
+}
+
+.product-card a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Chính sách */
+.policy-boxes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.policy-item {
+  flex: 1 1 30%;
+  background: #fefefe;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.policy-item:hover {
+  transform: scale(1.05);
+}
+
+/* Đánh giá khách hàng */
+.testimonial-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial {
+  flex: 1 1 45%;
+  background: #f3f3f3;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-style: italic;
+  animation: fadeUp 1s ease;
+}
+
+.testimonial strong {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Liên hệ */
+.quick-contact p {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+.carousel {
+  width: 500px;         /* rộng hơn */
+  height: 350px;        /* cao hợp lý */
+  margin: 0 auto;
+  perspective: 1200px;  /* tăng nhẹ để sâu hơn */
+}
+
+.carousel__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 10s linear infinite;
+  /* Nghiêng carousel 15 độ theo trục X để có hiệu ứng nghiêng */
+  transform-origin: center center;
+  transform: rotateX(-25deg);
+}
+
+.carousel__container img {
+  width: 280px;        /* tăng kích thước ảnh */
+  height: 250px;
+  position: absolute;
+  left: calc(50% - 125px); /* canh giữa ảnh theo chiều ngang */
+  top: calc(50% - 125px);  /* canh giữa ảnh theo chiều dọc */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+/* Đặt 5 ảnh trên vòng tròn nhỏ hơn để ảnh gần nhau hơn */
+/* Góc chia nhỏ hơn 72deg để ảnh sát nhau hơn (vd: 60deg) */
+/* Và giảm translateZ từ 300px xuống 250px */
+
+.carousel__container img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(250px);
+}
+.carousel__container img:nth-child(2) {
+  transform: rotateY(60deg) translateZ(250px);
+}
+.carousel__container img:nth-child(3) {
+  transform: rotateY(120deg) translateZ(250px);
+}
+.carousel__container img:nth-child(4) {
+  transform: rotateY(180deg) translateZ(250px);
+}
+.carousel__container img:nth-child(5) {
+  transform: rotateY(240deg) translateZ(250px);
+}
+.carousel__container img:nth-child(6) {
+  transform: rotateY(300deg) translateZ(250px);
+}
+
+/* Animation quay */
+@keyframes spin {
+  from {
+    transform: rotateX(-25deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-25deg) rotateY(360deg);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+

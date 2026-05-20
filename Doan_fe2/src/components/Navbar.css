@@ -1,0 +1,241 @@
+/* Navbar tổng thể */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeDown 0.6s ease-in-out;
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  height: 70px;
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1) rotateZ(-3deg);
+}
+
+/* Liên kết */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-left: 30px;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng underline khi hover */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Icon bên phải */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search */
+.search-box {
+  margin-left: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+.search-box:hover{
+   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+.search-box:focus-within {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Search button */
+.search-btn {
+  padding: 8px 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.search-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Icon style */
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+.icon:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 10px;
+  margin-top: 8px;
+  min-width: 150px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hover để hiện dropdown */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Caret */
+.caret {
+  margin-left: 5px;
+}
+
+/* Animation fadeDown */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+}
+
+.auth-link {
+  text-decoration: none;
+  color: black !important;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.auth-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #2196f3;
+}
+
+.auth-link:hover::after {
+  width: 100%;
+}
+.suggestion-box {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  z-index: 1000;
+  max-height: 240px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.suggestion-box li {
+  width: 100%; /* Chiếm trọn chiều ngang container */
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+}
+
+.suggestion-box li:last-child {
+  border-bottom: none;
+}
+
+.suggestion-box li:hover {
+  background-color: #e6f4ff;
+}
